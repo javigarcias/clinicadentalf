@@ -1,0 +1,15 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;;
+    color: blue;
+    min-height: 5vh;
+    a {
+        all: unset;
+        cursor: pointer;
+        padding: 0.8em;
+        &:hover {
+            background-color: rgb(220, 244, 253);
+        }
+    }
+}

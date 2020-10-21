@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import './Home.scss';
 
 class Home extends Component {
     constructor(props){
@@ -6,9 +9,9 @@ class Home extends Component {
     }
     render(){
         return (
-            <div>
-                <button className="loginButton" onClick >LOGIN</button>
-                <button className="registerButton" onClick >REGISTER </button>
+            <div className="home">
+                < Link to="/register">REGISTRO</Link>
+                <Link to="/login">LOGIN</Link>
             </div>
         )
     }
