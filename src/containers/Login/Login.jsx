@@ -10,7 +10,7 @@ const Login = () => {
             email:event.target.email.value,
             password:event.target.password.value
         };
-        axios.post('http://localhost:3001/users/login',user)
+        axios.post('http://localhost:3001/clientes/login',user)
         .then(res=>{
             console.log(res)
         })
