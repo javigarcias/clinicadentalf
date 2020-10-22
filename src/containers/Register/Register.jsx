@@ -15,7 +15,7 @@ const Register = () => {
             edad:event.target.edad.value,
             password:event.target.password.value
         };
-        axios.post('http://localhost:3001/clientes/registro',user)
+        axios.post('https://clinica-dental-db.herokuapp.com/clientes/registro',user)
         .then(res=>{
             console.log(res)
         })
