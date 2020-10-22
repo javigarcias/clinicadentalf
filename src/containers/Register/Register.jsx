@@ -1,9 +1,16 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
+
+
 
 
 const Register = () => {
+    
+    
+    const history = useHistory();
+    
     const handleSubmit = event =>{
         event.preventDefault(); // para evitar refrescar la página
         const user ={
@@ -15,9 +22,14 @@ const Register = () => {
             edad:event.target.edad.value,
             password:event.target.password.value
         };
-        axios.post('https://clinica-dental-db.herokuapp.com/clientes/registro',user)
+        axios.post('http://localhost:3001/clientes/registro',user)
         .then(res=>{
-            console.log(res)
+            console.log(res);
+            
+            setTimeout(() => {
+                history.push("/")
+            }, 1500);
+            
         })
         .catch(error=>console.log(error.response.data))
     }
