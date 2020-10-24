@@ -14,7 +14,6 @@ function App() {
           <Route path='/register' component={Register} exact/>
           <Route path='/login' component={Login} exact/>
           <Route path='/perfil' component={Perfil} exact/>
-
       </Switch>
     </BrowserRouter>
    

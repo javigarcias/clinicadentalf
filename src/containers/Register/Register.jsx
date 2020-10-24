@@ -12,6 +12,7 @@ const Register = () => {
     const history = useHistory();
     const [mensaje, setMensaje] = useState();
     
+
     const handleSubmit = event =>{
         event.preventDefault(); // para evitar refrescar la página
         const user ={
@@ -25,7 +26,6 @@ const Register = () => {
         };
         axios.post('http://localhost:3001/clientes/registro',user)
         .then(res=>{
-            console.log(res);
             localStorage.setItem("user", JSON.stringify(res.data)); 
             setMensaje(`${res.data.nombre}, bienvenid@ a nuestra app`)
             setTimeout(() => {
@@ -35,6 +35,8 @@ const Register = () => {
         })
         .catch(error=>setMensaje(error.response.data.message));
     }
+
+    
     return (
         <form className="login-form" onSubmit={handleSubmit}>
             <h3>Nombre</h3>

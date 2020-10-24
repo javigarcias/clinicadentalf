@@ -6,7 +6,7 @@ const Perfil = () => {
     const clientelogeado = JSON.parse( localStorage.getItem('user'));
     const history = useHistory();
     const [cita, setCita] = useState();
-    const [citaCreada, setCitaCreada] = useState();
+    //const [citaCreada, setCitaCreada] = useState();
     const [datosCitas, setDatosCitas] = useState([]);
     
 
@@ -16,7 +16,7 @@ const Perfil = () => {
         return axios.get('http://localhost:3001/citas/ver/' +token)
         .then((res) => {
             setDatosCitas(res.data.citas);
-            console.log (res.data.citas);
+            //console.log (res.data.citas);
             return res;
             
 
@@ -41,7 +41,7 @@ const Perfil = () => {
     };
     
     const creaCita = async () => { 
-        console.log(clientelogeado)
+        //console.log(clientelogeado)
         let citaBody = {
             fecha : cita.fecha,
             email : clientelogeado.email,
@@ -54,10 +54,21 @@ const Perfil = () => {
         
     }
 
-    const logout = ev => {
+    const logout = async () => {
         localStorage.clear();
-        history.push("/")
-    
+        //await axios.put('http://localhost:3001/cliente/logout/' +clientelogeado.email);
+        history.push('/');
+        
+        
+    }
+
+    const borraCita = async (cita) => {
+        await axios.delete('http://localhost:3001/citas/cancelar/' + cita);
+
+
+        await getCita(clientelogeado.token)
+
+
     }
     
     return (
@@ -75,7 +86,7 @@ const Perfil = () => {
             <button onClick={logout}>Logout</button>
     
             <div>
-            {datosCitas?.map(cita => <div className="cardCitas" key={cita._id} > > {cita.fecha} --- {cita.tratamiento}</div>)}           
+            {datosCitas?.map(cita => <div className="cardCitas" key={cita._id} > {cita.fecha} --- {cita.tratamiento} <button onClick={() => {borraCita(cita._id)}}>CANCELAR</button></div>)}           
             </div>
 
         </div>
