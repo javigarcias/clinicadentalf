@@ -10,7 +10,7 @@ const Register = () => {
     
     
     const history = useHistory();
-    const [mensaje, setMensaje] = useState("");
+    const [mensaje, setMensaje] = useState();
     
     const handleSubmit = event =>{
         event.preventDefault(); // para evitar refrescar la página
