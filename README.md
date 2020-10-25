@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="/img/logo-readme.jpg" >	
+    <img src="/img/logo-readme-2.png" >	
 </p>
 
 
