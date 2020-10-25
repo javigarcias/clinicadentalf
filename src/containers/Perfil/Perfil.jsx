@@ -76,29 +76,51 @@ const Perfil = () => {
     <div className="general">
 
       <div className="headerPerf">
+
         <div className="headerTit">
           <h2>Bienvenido {clientelogeado.nombre}</h2>
         </div>
+
         <div className="headerBot">
           <button className="logoutBot" onClick={logout}>SALIR</button>
         </div>
+
       </div>
 
       <div className="bodyPerfil">
+
+        <div className="bodyCitas">
+
+        <div className="titulo">
+          <h3>Citas</h3>
+        </div>
         <div className="citas">
           {datosCitas?.map(cita => <div className="cardCitas" key={cita._id} > {cita.fecha} --- {cita.tratamiento} <button className="cancBot" onClick={() => { borraCita(cita._id) }}>CANCELAR</button></div>)}
         </div>
-        <div>
-          <h3>Nueva Cita</h3>
-          <h4>Fecha</h4>
-          <input type="text" placeholder="DD/MM/AAAA" name="fecha" onChange={manejaCita}></input>
-          <h4>Tratamiento</h4>
-          <input type="text" placeholder="Tratamiento" name="tratamiento" onChange={manejaCita}></input>
+
         </div>
-        <button onClick={() => { creaCita() }} >Crear cita</button>
+
+        <div className="nuevaCita">
+
+          <div className="titulo">
+            <h3>Nueva Cita</h3>
+          </div>
+
+          <div className="inputsCitas">
+            <h4>Fecha</h4>
+            <input type="text" placeholder="DD/MM/AAAA" name="fecha" onChange={manejaCita}></input>
+            <h4>Tratamiento</h4>
+            <input type="text" name="tratamiento" onChange={manejaCita}></input>
+          </div>
+
+          <div className="citaBot">
+            <button className="botonCita" onClick={() => { creaCita() }} >Crear cita</button>
+          </div>
+
+        </div>
 
 
-      
+
       </div>
 
     </div>

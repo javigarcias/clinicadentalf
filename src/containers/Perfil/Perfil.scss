@@ -33,12 +33,15 @@
     
     
 }
+.bodyCitas{
+    width: 20em;
+    
+}
 .citas{
     display: flex;
     flex-direction: column;
-    width: 20em;
-    padding-right: 1em;
     border-right: 0.3em solid #0192a6;
+    padding-right: 1em;
 }
 .cardCitas{
     display: flex;
@@ -56,6 +59,64 @@
     font-weight: bold;
 
     color: #fb76ac;
+    border: 0.1em solid #fb76ac;
+    border-radius: 0.5em;
+    width: 6em;
+    cursor: pointer;
+    &:hover {
+        background-color:#fb76ac;
+        color: white;
+    }
+}
+
+.nuevaCita{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+    width: 10em;
+    height: 14em;
+    padding-left: 1em;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.inputsCitas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input{
+        all: unset;
+        font-style: oblique;
+        border: 0.1em solid #0192a6;
+        
+        border-radius: 0.3em;
+        margin-left: 1em;
+        margin-top: -1em;
+    }
+
+}
+.citaBot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    
+}
+.botonCita{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;;
+  
+    font-weight: bold;
+
+    color: #0192a6;
     border: 0.1em solid #0192a6;
     border-radius: 0.5em;
     width: 6em;
@@ -64,7 +125,9 @@
         background-color:#0192a6;
         color: white;
     }
+
 }
+
 
 
 
