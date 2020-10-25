@@ -1,0 +1,72 @@
+.headerPerf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8em;
+}
+
+.headerBot{
+    display: flex;
+    justify-content: center;
+}
+
+.logoutBot{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-left:2em ;
+    color: #fb76ac;
+    border: 0.1em solid #0192a6;
+    border-radius: 0.5em;
+    width: 5em;
+    cursor: pointer;
+    &:hover {
+        background-color:#0192a6;
+        color: white;
+    }
+}
+
+.bodyPerfil{
+    display: flex;
+    height: 30em;
+    
+    
+}
+.citas{
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    padding-right: 1em;
+    border-right: 0.3em solid #0192a6;
+}
+.cardCitas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+
+}
+.cancBot{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;;
+  
+    font-weight: bold;
+
+    color: #fb76ac;
+    border: 0.1em solid #0192a6;
+    border-radius: 0.5em;
+    width: 6em;
+    cursor: pointer;
+    &:hover {
+        background-color:#0192a6;
+        color: white;
+    }
+}
+
+
+
+
+
