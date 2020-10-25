@@ -3,7 +3,6 @@
     <img src="/img/img3.jpg" >	
 </p>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=javigarcias&label=Profile%20views&color=0e75b6&style=flat" alt="javigarcias" /> </p>
 
 # App Clinica Dental
 _Este proyecto consiste en la creación de una applicación para la gestión de citas en una clinica dental. Donde un cliente podrá registrarse, logearse si ya esta registrado y gestionar sus propias citas._
