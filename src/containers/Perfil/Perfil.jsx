@@ -17,15 +17,14 @@ const Perfil = () => {
         .then((res) => {
             setDatosCitas(res.data.citas);
             //console.log (res.data.citas);
-            return res;
-            
-
+            return res;            
         }).catch( (err) => {
             console.log( err );
 
         });
 
     }
+    
 
     useEffect(async() => {
 

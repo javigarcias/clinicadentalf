@@ -7,8 +7,13 @@ const Home = () => {
   
     return (
         <div className="home">
-            < Link to="/register">REGISTRO</Link>
-            <Link to="/login">LOGIN</Link>
+            <div className="espacioSup">
+                <div className="espacioLogo"></div>
+            </div>
+            <div className="homeLink">
+                <Link to="/register">REGISTRO</Link>
+                <Link to="/login">LOGIN</Link>
+            </div>
         </div>
     )
    

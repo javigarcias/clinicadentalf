@@ -7,6 +7,11 @@ import Perfil from './containers/Perfil/Perfil';
 import './App.scss';
 
 function App() {
+
+  //const [user, setUser]= useState(JSON.parse(localStorage.getItem('user')));
+
+
+
   return (
     <BrowserRouter>
       <Switch>
