@@ -24,7 +24,7 @@ const Register = () => {
             edad: event.target.edad.value,
             password: event.target.password.value
         };
-        axios.post('http://localhost:3001/clientes/registro', user)
+        axios.post('https://clinica-dental-b.herokuapp.com/clientes/registro', user)
             .then(res => {
                 localStorage.setItem("user", JSON.stringify(res.data));
                 setMensaje(`${res.data.nombre} Registrado correctamente`)

@@ -15,7 +15,7 @@ const Login = () => {
             email: event.target.email.value,
             password: event.target.password.value
         };
-        axios.post('http://localhost:3001/clientes/login', user)
+        axios.post('https://clinica-dental-b.herokuapp.com/clientes/login', user)
             .then(res => {
                 console.log(res);
                 localStorage.setItem("user", JSON.stringify(res.data));

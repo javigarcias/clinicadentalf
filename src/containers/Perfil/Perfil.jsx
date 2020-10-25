@@ -13,7 +13,7 @@ const Perfil = () => {
     //if(!clientelogeado) {return <Redirect to='/'/>}
 
     const getCita = (token)=>{
-        return axios.get('http://localhost:3001/citas/ver/' +token)
+        return axios.get('https://clinica-dental-b.herokuapp.com/citas/ver/' +token)
         .then((res) => {
             setDatosCitas(res.data.citas);
             //console.log (res.data.citas);
@@ -47,7 +47,7 @@ const Perfil = () => {
             tratamiento : cita.tratamiento,
             iduser : clientelogeado.token
         };
-        await axios.post('http://localhost:3001/citas/nuevacita', citaBody);
+        await axios.post('https://clinica-dental-b.herokuapp.com/citas/nuevacita', citaBody);
         await getCita(clientelogeado.token)
         
         
@@ -62,7 +62,7 @@ const Perfil = () => {
     }
 
     const borraCita = async (cita) => {
-        await axios.delete('http://localhost:3001/citas/cancelar/' + cita);
+        await axios.delete('https://clinica-dental-b.herokuapp.com/citas/cancelar/' + cita);
 
 
         await getCita(clientelogeado.token)
