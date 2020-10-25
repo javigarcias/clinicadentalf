@@ -76,6 +76,7 @@ const Perfil = () => {
     <div className="general">
 
       <div className="headerPerf">
+        <div className="logoPerfil"></div>
 
         <div className="headerTit">
           <h2>Bienvenido {clientelogeado.nombre}</h2>

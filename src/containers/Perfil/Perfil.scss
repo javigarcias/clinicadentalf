@@ -5,6 +5,16 @@
     height: 8em;
 }
 
+.logoPerfil{
+    background-image: url(../../img/img3.jpg);
+    background-size: contain;
+    margin-right: 2em;
+
+    width: 5em;
+    height: 5em;
+   
+
+}
 .headerBot{
     display: flex;
     justify-content: center;
@@ -34,7 +44,7 @@
     
 }
 .bodyCitas{
-    width: 20em;
+    width: 25em;
     
 }
 .citas{
@@ -42,6 +52,7 @@
     flex-direction: column;
     border-right: 0.3em solid #0192a6;
     padding-right: 1em;
+    width: em;
 }
 .cardCitas{
     display: flex;
