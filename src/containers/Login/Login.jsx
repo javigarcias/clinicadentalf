@@ -19,9 +19,10 @@ const Login = () => {
             .then(res => {
                 console.log(res);
                 localStorage.setItem("user", JSON.stringify(res.data));
-                setTimeout(() => {
+                history.push("/perfil")
+               /*  setTimeout(() => {
                     history.push("/perfil")
-                }, 1000);
+                }, 1000); */
 
             })
             .catch(error => console.log(error.response.data))
