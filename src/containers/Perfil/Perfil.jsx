@@ -28,12 +28,20 @@ const Perfil = () => {
   }
 
 
-  useEffect(async () => {
+  useEffect( () => {
 
     /* const options = {
         params: {token: clientelogeado.token}}
     console.log(options) */
+    const prueba = async () =>{
+
+    
+
     await getCita(clientelogeado.token)
+
+  }
+  prueba ()
+  
   }, []);
 
 
