@@ -35,8 +35,6 @@ const Perfil = () => {
     console.log(options) */
     const prueba = async () =>{
 
-    
-
     await getCita(clientelogeado.token)
 
   }
@@ -50,7 +48,7 @@ const Perfil = () => {
   };
 
   const creaCita = async () => {
-    //console.log(clientelogeado)
+    
     let citaBody = {
       fecha: cita.fecha,
       email: clientelogeado.email,

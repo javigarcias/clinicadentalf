@@ -34,8 +34,8 @@ const Login = () => {
             </div>
             <div className="form">
                 <form className="login-form" onSubmit={handleSubmit}>
-                    <input type="email" name="email" required placeholder="Introduce tu email" />
-                    <input type="password" name="password" required placeholder="Introduce tu contraseña" />
+                    <input className="input" type="email" name="email" required placeholder="Introduce tu email" />
+                    <input className="input" type="password" name="password" required placeholder="Introduce tu contraseña" />
                     
                     
                     <div className="botones">
