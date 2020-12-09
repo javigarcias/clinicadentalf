@@ -16,18 +16,18 @@ const Register = () => {
     const handleSubmit = event => {
         event.preventDefault(); // para evitar refrescar la página
         const user = {
-            nombre: event.target.nombre.value,
-            apellidos: event.target.apellidos.value,
-            direccion: event.target.direccion.value,
+            name: event.target.nombre.value,
+            lastName: event.target.apellidos.value,
+            phone: event.target.telefono.value,
             email: event.target.email.value,
-            telefono: event.target.telefono.value,
-            edad: event.target.edad.value,
-            password: event.target.password.value
+            password: event.target.password.value,
+            //direccion: event.target.direccion.value,
+            //edad: event.target.edad.value
         };
-        axios.post('https://clinica-dental-b.herokuapp.com/clientes/registro', user)
+        axios.post('http://localhost:8000/api/registro', user)
             .then(res => {
                 localStorage.setItem("user", JSON.stringify(res.data));
-                setMensaje(`${res.data.nombre} Registrado correctamente`)
+                setMensaje(`${res.data.name} Registrado correctamente`)
                 setTimeout(() => {
                     history.push("/perfil")
                 }, 1500);
@@ -45,22 +45,10 @@ const Register = () => {
             <div className="form">
                 <form className="login-form" onSubmit={handleSubmit}>
                     <h4>Nombre <input type="text" name="nombre" required /></h4>
-
                     <h4>Apellidos <input type="text" name="apellidos" required /></h4>
-
-                    <h4>Dirección <input type="text" name="direccion" required /></h4>
-
-                    <h4>Email <input type="email" name="email" required /></h4>
-
                     <h4>Teléfono <input type="tel" name="telefono" required /></h4>
-
-                    <h4>Edad <input type="number" name="edad" required /></h4>
-
+                    <h4>Email <input type="email" name="email" required /></h4>
                     <h4>Password <input type="password" name="password" required /></h4>
-                    <p>*Debe contener entre 8 y 10 caracteres</p>
-                    <p>uso de mayúscula, minúscula</p>
-                    <p>y un carácter especial</p>
-
                     <div className="botones">
                         <div className="registro">
                             <button className="botonesAccion" type="submit">Registrar</button>

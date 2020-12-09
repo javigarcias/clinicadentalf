@@ -85,7 +85,7 @@ const Perfil = () => {
         <div className="logoPerfil"></div>
 
         <div className="headerTit">
-          <h2>Bienvenido {clientelogeado.nombre}</h2>
+          <h2>Bienvenido {clientelogeado.name}</h2>
         </div>
 
         <div className="headerBot">
