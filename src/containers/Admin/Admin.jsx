@@ -2,21 +2,21 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import './Perfil.scss';
+import './Admin.scss';
 
-const Perfil = () => {
+const Admin = () => {
   const clientelogeado = JSON.parse(localStorage.getItem('user'));
   const history = useHistory();
   const [cita, setCita] = useState();
   //const [citaCreada, setCitaCreada] = useState();
   const [datosCitas, setDatosCitas] = useState([]);
+  console.log(datosCitas);
 
 
   //if(!clientelogeado) {return <Redirect to='/'/>}
 
   const getCita = (user) => {
-    //return axios.get('https://clinica-dental-b.herokuapp.com/citas' + token)
-    return axios.get(`http://localhost:8000/api/user/${user}/citas`)
+    return axios.get('http://localhost:8000/api/indexAll')
       .then((res) => {
         setDatosCitas(res.data);
         //console.log (res.data.citas);
@@ -48,20 +48,6 @@ const Perfil = () => {
     setCita({ ...cita, [ev.target.name]: ev.target.value });
   };
 
-  const creaCita = async () => {
-    
-    let citaBody = {
-      fecha: cita.fecha,
-      hora: cita.hora,
-      tratamiento: cita.tratamiento,
-      user_id: clientelogeado.id,
-      dentista_id: '1'
-    };
-    await axios.post('http://localhost:8000/api/citas', citaBody);
-    await getCita(clientelogeado.id)
-
-
-  }
 
   const logout = async () => {
     localStorage.clear();
@@ -104,34 +90,11 @@ const Perfil = () => {
         <div className="titulo">
           <h3>Citas</h3>
         </div>
-        <div className="citas">
-          {datosCitas?.map(cita => <div className="cardCitas" key={cita.id} > {cita.tratamiento} | {cita.fecha} | {cita.hora} <button className="cancBot" onClick={() => { borraCita(cita.id) }}>CANCELAR</button></div>)}
+        <div className="citasAdmin">
+          {datosCitas?.map(cita => <div className="cardCitas" key={cita.id} > {cita.user_id} - {cita.tratamiento} | {cita.fecha} | {cita.hora} <button className="cancBot" onClick={() => { borraCita(cita.id) }}>CANCELAR</button></div>)}
         </div>
 
         </div>
-
-        <div className="nuevaCita">
-
-          <div className="titulo">
-            <h3>Nueva Cita</h3>
-          </div>
-
-          <div className="inputsCitas">
-            <h4>Fecha</h4>
-            <input type="text" placeholder="AAAA/MM/DD" name="fecha" onChange={manejaCita}></input>
-            <h4>Hora</h4>
-            <input type="text" placeholder="HH:MM" name="hora" onChange={manejaCita}></input>
-            <h4>Tratamiento</h4>
-            <input type="text" name="tratamiento" onChange={manejaCita}></input>
-          </div>
-
-          <div className="citaBot">
-            <button className="botonCita" onClick={() => { creaCita() }} >Crear cita</button>
-          </div>
-
-        </div>
-
-
 
       </div>
 
@@ -139,4 +102,4 @@ const Perfil = () => {
   )
 }
 
-export default Perfil
+export default Admin

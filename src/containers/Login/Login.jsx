@@ -19,7 +19,13 @@ const Login = () => {
             .then(res => {
                 console.log(res);
                 localStorage.setItem("user", JSON.stringify(res.data));
-                history.push("/perfil")
+                console.log(res);
+                if(res.data.rol === "0"){
+                    history.push("/perfil")
+
+                }else{
+                    history.push("/admin")
+                }
                /*  setTimeout(() => {
                     history.push("/perfil")
                 }, 1000); */
@@ -36,8 +42,6 @@ const Login = () => {
                 <form className="login-form" onSubmit={handleSubmit}>
                     <input className="input" type="email" name="email" required placeholder="Introduce tu email" />
                     <input className="input" type="password" name="password" required placeholder="Introduce tu contraseña" />
-                    
-                    
                     <div className="botones">
                             <div className="homeLink">
                                 <button type="submit" className="botonesAccion">Login</button>
