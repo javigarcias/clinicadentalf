@@ -14,10 +14,11 @@ const Perfil = () => {
 
   //if(!clientelogeado) {return <Redirect to='/'/>}
 
-  const getCita = (token) => {
-    return axios.get('https://clinica-dental-b.herokuapp.com/citas/ver/' + token)
+  const getCita = (user) => {
+    //return axios.get('https://clinica-dental-b.herokuapp.com/citas' + token)
+    return axios.get(`http://localhost:8000/api/user/${user}/citas`)
       .then((res) => {
-        setDatosCitas(res.data.citas);
+        setDatosCitas(res.data);
         //console.log (res.data.citas);
         return res;
       }).catch((err) => {
@@ -35,7 +36,7 @@ const Perfil = () => {
     console.log(options) */
     const prueba = async () =>{
 
-    await getCita(clientelogeado.token)
+    await getCita(clientelogeado.id)
 
   }
   prueba ()
@@ -63,6 +64,7 @@ const Perfil = () => {
 
   const logout = async () => {
     localStorage.clear();
+    //await axios.get('http://localhost:8000/api/logout');
     //await axios.put('http://localhost:3001/cliente/logout/' +clientelogeado.email);
     history.push('/');
 
@@ -102,7 +104,7 @@ const Perfil = () => {
           <h3>Citas</h3>
         </div>
         <div className="citas">
-          {datosCitas?.map(cita => <div className="cardCitas" key={cita._id} > {cita.fecha} --- {cita.tratamiento} <button className="cancBot" onClick={() => { borraCita(cita._id) }}>CANCELAR</button></div>)}
+          {datosCitas?.map(cita => <div className="cardCitas" key={cita._id} > {cita.tratamiento} | {cita.fecha} | {cita.hora} <button className="cancBot" onClick={() => { borraCita(cita._id) }}>CANCELAR</button></div>)}
         </div>
 
         </div>
